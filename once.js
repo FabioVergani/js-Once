@@ -1,15 +1,18 @@
-function once(e,s,l){
- function f(o){l(o);o.target.removeEventListener(o.type,f);}
- e.addEventListener(s,f);
-}
+	const once=(a,b,c)=>{//a:element,b:eventname,c:callback
+		const f=o=>{
+			a.removeEventListener(b,c);
+			c(o)
+		};
+		a.addEventListener(b,c)
+	};
 
 
 
+	cons isReady=evt=>{
+		console.info('ready:%O',evt);
+		//doReadyStuff..
+	}
 
-function ready(o){
-log('ready');
-}
 
-
-once(document,'DOMContentLoaded',ready)
+once(document,'DOMContentLoaded',isReady)
 
