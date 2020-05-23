@@ -3,7 +3,7 @@
 			a.removeEventListener(f,c);
 			c(o)
 		};
-		a.addEventListener(b,c)
+		a.addEventListener(b,f)
 	};
 
 
