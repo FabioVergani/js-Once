@@ -1,17 +1,16 @@
-	const once=(a,b,c)=>{//a:element,b:eventname,c:callback
-		const f=o=>{
-			a.removeEventListener(b,f);
-			c(o)
+  
+	const once=(elem,eventType,callback)=>{
+		const f=event=>{
+			elem.removeEventListener(event.type,f);
+			callback(event)
 		};
-		a.addEventListener(b,f)
+		elem.addEventListener(eventType,f)
 	};
 
+ 
 
 
-	cons isReady=evt=>{
-		console.info('ready:%O',evt);
-		//doReadyStuff..
-	}
-
-
-once(document,'DOMContentLoaded',isReady)
+once(document,'DOMContentLoaded',event=>{
+  console.info('ready:%O',event);
+  //doReadyStuff..
+})
